@@ -2,19 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Invasores</title>
+    <descripcion Videojuego en HTML5 con incorporaciones diversas>
+    <author Camilo Aguilera ></author>
+    <title>Matrix Invaders: Neo's Battle</title><br><br><br>
     <style>
         body{ 
-            width:600px;
-              margin:0 auto;
+            width:700px;
+            margin:0 auto;
+            background-image: url(imagenes/backgroundpage.jpg);
               }
         h1{ 
             text-align:center;
             } 
         #miCanvas{ 
-            border:dotted 2px yellow;
+            border:dotted 3px purple;
             background:black;
-            }
+            }    
     </style>
     <script>
 
@@ -31,7 +34,7 @@
 
         var teclaPulsada = null;
         var tecla = [];
-        var colorBala = "red";
+        var colorBala = "Chartreuse";
         var balasEnemigas_array = new Array();
         var balas_array = new Array();
         var enemigos_array = new Array();
@@ -125,15 +128,15 @@ function score() {
 ctx.save();
 ctx.fillStyle = "white";
 ctx.clearRect(0,0,canvas.width,40);
-ctx.font = "bold 20px Courier";
+ctx.font = "bold 20px Times New Roman";
 ctx.fillText("SCORE: "+puntos,10,20);
 ctx.restore();
 }
 function mensaje(cadena) {
     var lon = (canvas.width-(53*cadena.length))/2;
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "GreenYellow";
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    ctx.font = "bold 50px Rosewood Std";
+    ctx.font = "bold 50px Candara";
     ctx.fillText(cadena,lon,220);
 }
 
@@ -176,7 +179,7 @@ function gameOver() {
     balasEnemigas_array = [];
     clearTimeout(de);
     finJuego = true;
-    mensaje("GAME OVER");
+    mensaje("GAME OVER!");
     fin.play();
   }
   
@@ -263,7 +266,7 @@ window.onload = function() {
                     imagenEnemigo = new Image();
                     imagenEnemigo.src = "imagenes/invader.fw.png";
                     imagen.src = "imagenes/torre.fw.png";
-                    mensaje("INVASORES");
+                    mensaje("MACHINESWAR");
                     intro.play();
                     imagen.onload = function() {
                         jugador = new Jugador(0);
@@ -286,7 +289,8 @@ de = setTimeout(disparaEnemigo,3500);
     </script>
 </head>
 <body>
-    <h1> CANVAS Invaders OMJV</h1>
+    <h1> Matrix Machine Game Destruction</h1><br><br><br><br>
+    <h1> Anímate a salvar al Mundo de las Máquinas!!</h1><br><br><br><br>
         <canvas id="miCanvas" width="600px" height="500px">
             Tu navegador no soporta CANVAS
         </canvas>
@@ -306,13 +310,9 @@ de = setTimeout(disparaEnemigo,3500);
           <source src="sonidos/gameOver.mp3">
         <source src="sonidos/gameOver.ogg">    
         </audio>
+    <br><br><br><h2><div id="footer">&copy;Derechos Reservados Hagi2020</div></h2><br><br><br>    
 </body>
 </html>
-
-
-
-
-
 
 
 
